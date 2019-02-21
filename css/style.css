@@ -1,0 +1,312 @@
+* {
+  transform-style: preserve-3d;
+}
+
+html, body {
+  height: 100vh;
+  background: black;
+  /*
+  background: url(../images/background-image-matias-skodt.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  cursor: pointer;
+  */
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: yellow;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+header h2 {
+  display: none;
+}
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  padding: 1.50rem 1rem;
+  list-style-type: none;
+  text-decoration: none;
+  color: blue;
+}
+
+/* Change the color of links on hover */
+.tabbar a:hover {
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+  color: white;
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 60px 0;
+}
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* //// BAGGRUNDS FADE //// */
+.forsvind {
+  font-size: 20vw;
+  position: fixed;
+  width: 100vw;
+  margin-top: -20vw;
+  margin-left: -1vw;
+  z-index: -2;
+  overflow: hidden;
+  animation-name: change-color;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+}
+
+.forsvind b {
+  color: yellow;
+}
+
+/* The animation code */
+@keyframes change-color {
+  from {
+    color: yellow;
+  }
+
+  to {
+    color: black;
+  }
+}
+
+/* /////// GLOBALE 3D-object TING ////// */
+.code {
+  padding: 1em;
+  background: #eee;
+  border: 2px solid #777;
+}
+
+.model {
+  pointer-events: none;
+  display: block;
+  width: 70vmin;
+  height: 140vmin;
+}
+
+.model--small {
+  width: 25vmin;
+  height: 25vmin;
+}
+
+.model--tiny {
+  width: 15vmin;
+  height: 15vmin;
+}
+
+.model--abs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -25vmin;
+}
+
+.model--abs.model--small {
+  margin: -12.5vmin;
+}
+
+.model--abs.model--tiny {
+  margin: -7.5vmin;
+}
+
+.model--spaced {
+  margin: 1.5rem;
+}
+
+/*
+.model-wrap {
+  border: 1px dashed green;
+  margin: auto;
+  position: relative;
+}
+*/
+.test {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.test__output {
+  position: relative;
+  margin-top: 11vh;
+}
+
+.model {
+  display: inline-block;
+}
+
+.test--fail {
+  color: #c00;
+  background: rgba(200, 0, 0, .2)
+}
+
+.test--fail::before {
+  content: 'FAILING TEST'
+}
+
+@keyframes spin-xyz {
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes spin-x {
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes spin-y {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin-z {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes swing-x {
+  from {
+    transform: translateX(-25vw);
+  }
+
+  to {
+    transform: translateX(25vw);
+  }
+}
+
+.space {
+  border-style: solid;
+  margin-bottom: 100vh;
+}
+
+/* /////////// STYLING FOR INDEX ///////// */
+.intro-overlap {
+  display: none;
+}
+
+.intro-text {
+  z-index: 1;
+  color: white;
+  margin-top: -25vw;
+  text-align: justify;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+/*
+
+////////////  STYLING FOR PROJECT //////////////
+
+*/
+.model-hand {
+  margin-top: 10vh;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  overflow-x: auto;
+  height: 50vh;
+  width: 90vw;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  border: 1px solid white;
+  width: 90vw;
+  height: 50vh;
+  background: black;
+}
+
+
+/* /////// PC //////// */
+@media (min-width: 1025px) {
+  .menu-overlab {
+    position: relative;
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    float: right;
+  }
+
+  .menu {
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    width: 80%;
+    margin-left: 5vh;
+    margin-bottom: 10vh;
+    bottom: 0;
+    left: 0;
+  }
+
+  .forsvind {
+    width: 50%;
+  }
+
+  /*
+
+  ////////////  STYLING FOR projects.html //////////////
+
+  */
+  .model-hand {
+    pointer-events: none;
+    display: block;
+    width: 70vmin;
+    height: 140vmin;
+  }
+}

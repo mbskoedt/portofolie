@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iks6ovd.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:800|Roboto+Mono" rel="stylesheet">
+  <title>HTML model element: Test page</title>
+</head>
+
+<body>
+
+  <nav class="tabbar">
+    <a href="#index" onclick="showPage('index')">index</a>
+    <a href="#projects" onclick="showPage('projects')">projects</a>
+    <a href="#about" onclick="showPage('about')">about</a>
+  </nav>
+
+  <!-- /////// PAGES //////// -->
+
+  <!-- /////////// INDEX /////////////// -->
+  <section id="index" class="page">
+    <header class="topbar">
+      <h2>index</h2>
+    </header>
+    <h2 class="forsvind">
+      TIASSKØDTMA<br>
+      <b>MATIAS</b>SKØDT<br>
+      AS<b>SKØDT</b>MATI<br>
+      MASKØDTTIAS<br>
+      ØDTMATIASSK<br>
+      ATIASSKØDTM<br>
+    </h2>
+
+    <!-- RØD PIL TIL NÆSTE SIDE
+      <a href="projects.html">
+        <img src="../img/arrow-png.png" alt="pil" class="project-arrow">
+      </a>
+    -->
+    <div class="test">
+      <div class="test__output">
+        <x-model class="model" src="../assets/models/gltf/3d-skull/skull.obj" style="max-width: 500px; max-height: 500px; animation: 6s spin-y linear infinite"></x-model>
+      </div>
+
+      <div class="intro-overlab">
+        <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id imperdiet urna. Vestibulum lacinia risus eu velit lacinia ultrices. <br>
+          Fusce accumsan purus non augue tincidunt luctus. Nulla id mattis purus. Mauris et consectetur quam. <br>
+          In a lacus a purus ultrices suscipit eu a neque. Aliquam vitae neque at tortor tincidunt egestas.</p>
+      </div>
+
+      <div class="space"></div>
+
+      <script src="../javascript/javascript.js"></script>
+      <script src="../assets/js/vendor/custom-element-polyfill.min.js"></script>
+      <script src="../assets/js/vendor/three.min.js"></script>
+      <script src="../assets/js/vendor/three-obj-loader.min.js"></script>
+      <script src="../assets/js/vendor/three-gltf-loader.min.js"></script>
+      <script src="../../dist/model-element.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <p>My Single Page Web App Template</p>
+  </section>
+
+  <!-- /////////// projects /////////////// -->
+
+  <section id="projects" class="page">
+    <header class="topbar">
+      <h2>About</h2>
+    </header>
+
+    <h2 class="forsvind">
+      JECTSPRO<br>
+      <b>PRO</b>JECTS<br>
+      RO<b>JECTS</b>P<br>
+      SPROJECT<br>
+      OJECTSPR<br>
+      CTSPROJE
+    </h2>
+
+    <div class="test">
+      <div class="test__output">
+        <x-model class="model-hand" src="../assets/models/gltf/3d-hand/handObj.obj" style="max-width: 500px; max-height: 500px; animation: 6s spin-y linear infinite"></x-model>
+      </div>
+    </div>
+
+    <div class="scrolling-wrapper-flexbox">
+      <div class="card">
+        <h2>Card</h2>
+        <img src="img/regular-party.jpg"
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+      <div class="card">
+        <h2>Card</h2>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- /////////// ABOUT /////////////// -->
+  <section id="about" class="page">
+    <header class="topbar">
+      <h2>about</h2>
+    </header>
+    <p>Hmm, there should be some clients right here...</p>
+  </section>
+
+
+  <script src="../javascript/javascript.js"></script>
+  <script src="../assets/js/vendor/custom-element-polyfill.min.js"></script>
+  <script src="../assets/js/vendor/three.min.js"></script>
+  <script src="../assets/js/vendor/three-obj-loader.min.js"></script>
+  <script src="../assets/js/vendor/three-gltf-loader.min.js"></script>
+  <script src="../../dist/model-element.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+</html>
