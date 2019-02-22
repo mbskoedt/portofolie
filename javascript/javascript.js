@@ -37,19 +37,6 @@ function setActiveTab(pageId) {
 
 setDefaultPage();
 
-$(document).scroll(function() {
-  var y = $(this).scrollTop();
-  if (y > 100) {
-    $('.project-arrow').fadeIn();
-  } else {
-    $('.project-arrow').fadeOut();
-  }
-});
-
-function myFunction(x) {
-  x.classList.toggle("change");
-}
-
 ////// Display elements
 
 function refresh() {
