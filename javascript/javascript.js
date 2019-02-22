@@ -15,7 +15,7 @@ function showPage(pageId) {
 
 // set default page
 function setDefaultPage() {
-  let page = 'index';
+  let page = "index";
   if (location.hash) {
     page = location.hash.slice(1);
   }
