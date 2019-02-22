@@ -89,25 +89,30 @@
         <div class="project-text">
           <h3>my own stuff</h3>
           <p>Find a collection of stuff <br> I do in my spare time</p>
+          <a href="#my-own-stuff" onclick="showPage('myOwnProjects')">
+            <button class="button">Let's go</button>
+          </a>
         </div>
-        <button>Let's go</button>
       </section>
       <section class="project-container" id="container-2">
         <div class="project-text">
           <h3>myFSTVL</h3>
           <p>A prototype showcase of the web app myFSTVL. <br> It's Tinder for music</p>
+          <button class="button">What? Let me see</button>
         </div>
       </section>
       <section class="project-container" id="container-3">
         <div class="project-text">
           <h3>Under Masken</h3>
           <p>A project for the café/bar Under Masken. <br> Click if you like aquariums</p>
+          <button class="button">I love aquariums</button>
         </div>
       </section>
       <section class="project-container" id="container-4">
         <div class="project-text">
           <h3>Clean Sneaks</h3>
           <p>A retake on Clean Sneaks Aarhus website <br> Hypnotizing .gif included</p>
+          <button class="button">Take me there</button>
         </div>
       </section>
       <a href="#projects">
@@ -118,24 +123,84 @@
         </section>
       </a>
     </article>
+  </section>
 
 
-    <!-- /////////// ABOUT /////////////// -->
-    <section id="about" class="page">
-      <header class="topbar">
-        <h2>about</h2>
-      </header>
-      <p>Hmm, there should be some clients right here...</p>
+  <!-- /////////// ABOUT /////////////// -->
+  <section id="about" class="page">
+    <header class="topbar">
+      <h2>about</h2>
+    </header>
+    <p>Hmm, there should be some clients right here...</p>
+  </section>
+
+  <!-- /////// ACTUAL PROJECTS ////// -->
+
+  <section id="myOwnProjects" class="page">
+    <header class="topbar">
+      <h2>my own projects</h2>
+    </header>
+    <section class="gallery-container">
+      <div id="element-1" class="elements">
+        <span onclick="document.getElementById('element-1').style.display='none';" class="x-close">&times;</span>
+        <video loop autoplay muted class="responsive-element-video">
+          <source src="video/14-hours-spacetrip.mp4">
+        </video>
+      </div>
+      <div id="element-2" class="elements">
+        <span onclick="document.getElementById('element-2').style.display='none';" class="x-close">&times;</span>
+        <img src="../img/regular-party.jpg" class="responsive-element">
+      </div>
+      <div id="element-3" class="elements">
+        <span onclick="document.getElementById('element-3').style.display='none';" class="x-close">&times;</span>
+        <img src="../img/elastik-interaction.jpg" class="responsive-element">
+      </div>
+      <div id="element-4" class="elements">
+        <span onclick="document.getElementById('element-4').style.display='none';" class="x-close">&times;</span>
+        <img src="../img/mass-extinction.jpg" class="responsive-element">
+      </div>
+      <div id="element-5" class="elements">
+        <span onclick="document.getElementById('element-5').style.display='none';" class="x-close">&times;</span>
+        <video loop autoplay muted class="responsive-element-video">
+
+          <source src="video/a-hole-in-the-wall.mp4">
+        </video>
+      </div>
     </section>
+    <button value="Refresh Page" onclick="refresh()" class="refresh">
+      <p>Refresh items</p>
+    </button>
+    <div class="example1">
+      <p>... And there is even more at my Instagram </p>
+    </div>
+  </section>
 
+  <section id="about" class="page">
+    <header class="topbar">
+      <h2>about</h2>
+    </header>
+    <p>Hmm, there should be some clients right here...</p>
+  </section>
+  <section id="about" class="page">
+    <header class="topbar">
+      <h2>about</h2>
+    </header>
+    <p>Hmm, there should be some clients right here...</p>
+  </section>
+  <section id="about" class="page">
+    <header class="topbar">
+      <h2>about</h2>
+    </header>
+    <p>Hmm, there should be some clients right here...</p>
+  </section>
 
-    <script src="../javascript/javascript.js"></script>
-    <script src="../assets/js/vendor/custom-element-polyfill.min.js"></script>
-    <script src="../assets/js/vendor/three.min.js"></script>
-    <script src="../assets/js/vendor/three-obj-loader.min.js"></script>
-    <script src="../assets/js/vendor/three-gltf-loader.min.js"></script>
-    <script src="../../dist/model-element.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../javascript/javascript.js"></script>
+  <script src="../assets/js/vendor/custom-element-polyfill.min.js"></script>
+  <script src="../assets/js/vendor/three.min.js"></script>
+  <script src="../assets/js/vendor/three-obj-loader.min.js"></script>
+  <script src="../assets/js/vendor/three-gltf-loader.min.js"></script>
+  <script src="../../dist/model-element.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>

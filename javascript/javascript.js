@@ -1,4 +1,3 @@
-
 // hide all pages
 function hideAllPages() {
   let pages = document.querySelectorAll(".page");
@@ -16,7 +15,7 @@ function showPage(pageId) {
 
 // set default page
 function setDefaultPage() {
-  let page = "home";
+  let page = 'index';
   if (location.hash) {
     page = location.hash.slice(1);
   }
@@ -51,6 +50,14 @@ function myFunction(x) {
   x.classList.toggle("change");
 }
 
+////// Display elements
+
+function refresh() {
+  var elems = document.getElementsByClassName('elements');
+  for (var i = 0; i < elems.length; i += 1) {
+    elems[i].style.display = 'block';
+  }
+}
 ///////
 
 /* SNIPPET FRA https:
