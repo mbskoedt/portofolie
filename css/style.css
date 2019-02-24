@@ -59,6 +59,7 @@ header h2 {
   display: flex;
   justify-content: space-between;
   z-index: 100;
+  background-color: black;
 }
 
 /* Style the links inside the navigation bar */
@@ -105,7 +106,7 @@ header h2 {
   font-size: 20vw;
   position: fixed;
   width: 100vw;
-  margin-top: -45vw;
+  margin-top: -70vw;
   margin-left: -1vw;
   z-index: -2;
   overflow: hidden;
@@ -115,6 +116,23 @@ header h2 {
 }
 
 .forsvind b {
+  color: yellow;
+}
+
+.forsvind-projects {
+  font-size: 20vw;
+  position: fixed;
+  width: 100vw;
+  margin-top: -70vw;
+  margin-left: -1vw;
+  z-index: -2;
+  overflow: hidden;
+  animation-name: change-color;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+}
+
+.forsvind-projects b {
   color: yellow;
 }
 
@@ -253,6 +271,23 @@ header h2 {
 ////////////  STYLING FOR PROJECT //////////////
 
 */
+.forsvind-projects {
+  font-size: 20vw;
+  position: fixed;
+  width: 100vw;
+  margin-top: -20vw;
+  margin-left: -1vw;
+  z-index: -2;
+  overflow: hidden;
+  animation-name: change-color;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+}
+
+.forsvind b {
+  color: yellow;
+}
+
 .model-hand {
   margin-top: 10vh;
 }
@@ -457,6 +492,11 @@ header h2 {
 /* /////// PC //////// */
 @media (min-width: 1025px) {
 
+  /* ///// STYLING FOR INDEX ////// */
+  #index {
+    height: 100vh;
+  }
+
   .tabbar {
     width: 50%;
     float: right;
@@ -492,17 +532,19 @@ header h2 {
 
   .forsvind {
     width: 50%;
-    font-size: 7rem;
+    height: 130vh;
+    font-size: 6.5rem;
     margin-top: -40vh;
     top: 0;
   }
 
   .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
     bottom: 0;
     left: 0;
+    width: 100%;
   }
 
   .footer h3, p, a {
@@ -513,83 +555,125 @@ header h2 {
   /*
   ////////////  STYLING FOR PROJECT //////////////
   */
-  
+  #projects .test__output {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .forsvind-projects {
+    width: 50%;
+    height: 100vh;
+    font-size: 6.5rem;
+    margin-top: -10vh;
+    top: 0;
+  }
+
+  .model-hand {
+    width: 30%;
+    margin-top: 20vh;
+  }
+
   #project-collections {
     display: block;
     margin-top: 0vh;
-    display: none;
   }
 
   #container-1 {
-    background-image: url("../img/regular-party-2.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 40vw auto;
-    background-position: center;
+    overflow: hidden;
+    margin-top: 100vh;
+    background-size: 25vw auto;
+    float: right;
   }
 
   #container-2 {
-    background-image: url("../img/myFSTVL-login.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 40vw auto;
-    background-position: center;
+    overflow: hidden;
+    background-size: 25vw auto;
   }
 
   #container-3 {
-    background-image: url("../img/undermasken-landingpage.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 40vw auto;
-    background-position: center;
+    overflow: hidden;
+    background-size: 25vw auto;
   }
 
   #container-4 {
-    background-image: url("../img/cleansneaks-landingpage.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 40vw auto;
-    background-position: center;
+    overflow: hidden;
+    background-size: 25vw auto;
   }
 
   #container-5 {
-    background-image: url("../img/to-the-top.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 40vw auto;
-    background-position: center;
+    overflow: hidden;
+    background-size: 25vw auto;
   }
 
   #container-5 h3 {
-    padding-bottom: 40vh;
+    padding-bottom: 10vh;
   }
 
   .button {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 7vh;
-    font-family: 'Roboto Mono', monospace;
+    border-style: solid;
+    border-color: white;
   }
 
-  .project-container {
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: scroll;
-    position: relative;
-    display: inline-block;
-  }
+  .project-container {}
 
   .project-text {
-    text-align: center;
-    position: absolute;
-    margin-top: 20vw;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    margin-top: 10vw;
+    position: relative;
+  }
+
+  .project-text p {
     color: white;
+  }
+
+  /* ///// MY OWN STUFF ////// */
+  #myOwnProjects p {
+    color: white;
+  }
+
+  #myOwnProjects {}
+
+  .gallery-container {
+    align-content: center;
+  }
+
+  .responsive-element {
+    width: 200px;
+    height: auto;
+  }
+
+  .responsive-element-video {
+    width: 200px;
+    height: auto;
+  }
+
+  .elements {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin: 3vh;
+  }
+
+  .x-close {
+    position: absolute;
+    margin-top: -2vh;
+    margin-right: -1vh;
+  }
+
+  .refresh {
+    background-color: black;
+  }
+
+  .example1 a {
+    font-size: 2rem;
+    color: blue;
+  }
+
+  .example1 p {
+    font-size: 2rem;
+    -moz-animation: example1 20s linear infinite;
+    -webkit-animation: example1 20s linear infinite;
+    animation: example1 20s linear infinite;
   }
 }
