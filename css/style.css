@@ -280,7 +280,7 @@ header h2 {
   z-index: -2;
   overflow: hidden;
   animation-name: change-color;
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-fill-mode: forwards;
 }
 
@@ -573,6 +573,11 @@ header h2 {
     margin-top: 20vh;
   }
 
+  #projects .intro-overlab {
+    margin-top: 95vh;
+    margin-left: 40vh;
+  }
+
   #project-collections {
     display: block;
     margin-top: 0vh;
@@ -631,8 +636,6 @@ header h2 {
   #myOwnProjects p {
     color: white;
   }
-
-  #myOwnProjects {}
 
   .gallery-container {
     align-content: center;
