@@ -45,120 +45,148 @@ function refresh() {
     elems[i].style.display = 'block';
   }
 }
-///////
 
-/* SNIPPET FRA https:
-//codemyui.com/animated-long-shadow-text-effect/
 
-TEXT ANIMATION LIGESOM SYVKABALE */
+//////// SNAKE GAME
 
-///////
-/*
-var canvas = document.querySelector('.the-canvas');
+var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
-var ratio = window.devicePixelRatio || 1;
 
-var totalLineHeight = 680;
-var totalLines = 4;
-var totalDiff = totalLineHeight / totalLines;
-var fontHeight = 60 * ratio - 50; // Small centering
+var grid = 16;
+var count = 0;
 
-var smallestWidth = 280; // width of smallest line;
-var offsetX = 12;
-var offsetY = 6;
-var iterations;
-var verticalAlign, line1Diff, line2Diff, line3Diff, line4Diff, iterations, iteration, animationFrame;
+var snake = {
+  x: 160,
+  y: 160,
 
-var startRGB = [255, 255, 255];
-var endRGB   = [220, 165, 163];
-var fullColorSet = [];
+  // snake velocity. moves one grid length every frame in either the x or y direction
+  dx: grid,
+  dy: 0,
 
-init();
+  // keep track of all grids the snake body occupies
+  cells: [],
 
-function init() {
-
-  // Cancel any already running animations
-  cancelAnimationFrame(animationFrame);
-
-  // Set the canvas width and height
-  canvas.width = window.innerWidth * ratio;
-  canvas.height = window.innerHeight * ratio;
-
-  // Set the canvas font properties
-  context.font = '180px Montserrat';
-  context.textAlign = 'center';
-  context.fillStyle = '#fff';
-  context.strokeStyle = "#F0A5A3";
-  context.lineWidth = "3";
-  context.textBaseline = "middle";
-
-  // Centering of the text
-  verticalAlign = (window.innerHeight / 2  * ratio) - totalLineHeight / 2;
-  line1Diff = totalLineHeight + fontHeight - totalDiff;
-  line2Diff = totalLineHeight + fontHeight - totalDiff * 2;
-  line3Diff = totalLineHeight + fontHeight - totalDiff * 3;
-  line4Diff = totalLineHeight + fontHeight - totalDiff * 4;
-
-  // How many iterations will we go through?
-  iterations = Math.floor(((window.innerWidth * ratio / 2) - (smallestWidth * ratio / 2)) / offsetX + 5);
-  prepareColorSets(iterations);
-
-  iteration = 0;
-
-  animationFrame = requestAnimationFrame(draw);
-}
-
-// Draw loop
-function draw() {
-
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  for( var i = iterations - 1; i > 0; i-- ) {
-    context.fillStyle = 'rgb(' + fullColorSet[i][0] + ',' + fullColorSet[i][1] + ',' + fullColorSet[i][2] + ')';
-    var x = window.innerWidth / 2 * ratio - i * offsetX;
-    var y = verticalAlign + i * offsetY + (Math.sin(i + iteration) * 2);
-    drawText( x, y );
-  }
-
-  iteration += 0.1;
-  animationFrame = requestAnimationFrame(draw);
-}
-
-// Draw the single lines of text.
-function drawText(x, y) {
-
-  context.fillText("MATIAS", x, y + line4Diff);
-  context.strokeText("MATIAS", x, y + line4Diff);
-
-  context.fillText("SKØDT", x, y + line3Diff);
-  context.strokeText("SKØDT", x, y + line3Diff);
-
-  context.fillText("MATIAS", x, y + line2Diff);
-  context.strokeText("MATIAS", x, y + line2Diff);
-
-  context.fillText("SKØDT", x, y + line1Diff);
-  context.strokeText("SKØDT", x, y + line1Diff);
-}
-
-// We do this so we don't have to calculate these EVERY loop.
-function prepareColorSets(iterations) {
-  fullColorSet = [];
-  for( var i = 0; i < iterations; i++ ) {
-    fullColorSet.push(colourGradientor(1 - i / iterations, startRGB, endRGB));
-  }
-}
-
-// THNX - http://stackoverflow.com/questions/14482226/how-can-i-get-the-color-halfway-between-two-colors
-function colourGradientor(p, rgb_beginning, rgb_end){
-
-  var w = p * 2 - 1;
-  var w1 = (w + 1) / 2.0;
-  var w2 = 1 - w1;
-  var rgb = [parseInt(rgb_beginning[0] * w1 + rgb_end[0] * w2),
-             parseInt(rgb_beginning[1] * w1 + rgb_end[1] * w2),
-             parseInt(rgb_beginning[2] * w1 + rgb_end[2] * w2)];
-  return rgb;
+  // length of the snake. grows when eating an apple
+  maxCells: 4
+};
+var apple = {
+  x: 320,
+  y: 320
 };
 
-window.onresize = init;
-*/
+// get random whole numbers in a specific range
+// @see https://stackoverflow.com/a/1527820/2124254
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// game loop
+function loop() {
+  requestAnimationFrame(loop);
+
+  // slow game loop to 15 fps instead of 60 (60/15 = 4)
+  if (++count < 4) {
+    return;
+  }
+
+  count = 0;
+  context.clearRect(0,0,canvas.width,canvas.height);
+
+  // move snake by it's velocity
+  snake.x += snake.dx;
+  snake.y += snake.dy;
+
+  // wrap snake position horizontally on edge of screen
+  if (snake.x < 0) {
+    snake.x = canvas.width - grid;
+  }
+  else if (snake.x >= canvas.width) {
+    snake.x = 0;
+  }
+
+  // wrap snake position vertically on edge of screen
+  if (snake.y < 0) {
+    snake.y = canvas.height - grid;
+  }
+  else if (snake.y >= canvas.height) {
+    snake.y = 0;
+  }
+
+  // keep track of where snake has been. front of the array is always the head
+  snake.cells.unshift({x: snake.x, y: snake.y});
+
+  // remove cells as we move away from them
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
+  }
+
+  // draw apple
+  context.fillStyle = 'red';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
+  // draw snake one cell at a time
+  context.fillStyle = 'green';
+  snake.cells.forEach(function(cell, index) {
+
+    // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);
+
+    // snake ate apple
+    if (cell.x === apple.x && cell.y === apple.y) {
+      snake.maxCells++;
+
+      // canvas is 400x400 which is 25x25 grids
+      apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+    }
+
+    // check collision with all cells after this one (modified bubble sort)
+    for (var i = index + 1; i < snake.cells.length; i++) {
+
+      // snake occupies same space as a body part. reset game
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+      }
+    }
+  });
+}
+
+// listen to keyboard events to move the snake
+document.addEventListener('keydown', function(e) {
+  // prevent snake from backtracking on itself by checking that it's
+  // not already moving on the same axis (pressing left while moving
+  // left won't do anything, and pressing right while moving left
+  // shouldn't let you collide with your own body)
+
+  // left arrow key
+  if (e.which === 37 && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+  // up arrow key
+  else if (e.which === 38 && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+  // right arrow key
+  else if (e.which === 39 && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+  // down arrow key
+  else if (e.which === 40 && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+});
+
+// start the game
+requestAnimationFrame(loop);

@@ -3,7 +3,6 @@
 }
 
 html, body {
-  height: 100vh;
   background: black;
   scroll-behavior: smooth;
   /*
@@ -102,8 +101,13 @@ header h2 {
 }
 
 /* //// BAGGRUNDS FADE //// */
+.landingpage {
+  display: block;
+  overflow: none;
+}
+
 .forsvind {
-  font-size: 20vw;
+  font-size: 460%;
   position: fixed;
   width: 100vw;
   margin-top: -70vw;
@@ -111,7 +115,7 @@ header h2 {
   z-index: -2;
   overflow: hidden;
   animation-name: change-color;
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-fill-mode: forwards;
 }
 
@@ -119,21 +123,24 @@ header h2 {
   color: yellow;
 }
 
-.forsvind-projects {
-  font-size: 20vw;
-  position: fixed;
-  width: 100vw;
-  margin-top: -70vw;
-  margin-left: -1vw;
-  z-index: -2;
-  overflow: hidden;
-  animation-name: change-color;
-  animation-duration: 20s;
-  animation-fill-mode: forwards;
-}
-
 .forsvind-projects b {
   color: yellow;
+}
+
+.footer {
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+.footer p {
+  display: none;
+}
+
+.footer a {
+  margin: 10px;
 }
 
 /* The animation code */
@@ -148,12 +155,6 @@ header h2 {
 }
 
 /* /////// GLOBALE 3D-object TING ////// */
-.code {
-  padding: 1em;
-  background: #eee;
-  border: 2px solid #777;
-}
-
 .model {
   pointer-events: none;
   display: block;
@@ -247,11 +248,6 @@ header h2 {
   }
 }
 
-.space {
-  border-style: solid;
-  margin-bottom: 100vh;
-}
-
 /* /////////// STYLING FOR INDEX ///////// */
 .intro-overlap {
   display: none;
@@ -260,7 +256,7 @@ header h2 {
 .intro-text {
   z-index: 1;
   color: white;
-  margin-top: -25vw;
+  margin-top: -15vw;
   text-align: justify;
   margin-left: 3vw;
   margin-right: 3vw;
@@ -272,10 +268,10 @@ header h2 {
 
 */
 .forsvind-projects {
-  font-size: 20vw;
+  font-size: 460%;
   position: fixed;
   width: 100vw;
-  margin-top: -20vw;
+  margin-top: -50vw;
   margin-left: -1vw;
   z-index: -2;
   overflow: hidden;
@@ -284,8 +280,8 @@ header h2 {
   animation-fill-mode: forwards;
 }
 
-.forsvind b {
-  color: yellow;
+#intro-text-projects {
+  margin-top: 35vw;
 }
 
 .model-hand {
@@ -387,7 +383,6 @@ header h2 {
   height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
   margin-top: -15vh;
 }
@@ -489,31 +484,43 @@ header h2 {
   }
 }
 
+/* ////// ABOUT ///// */
+.canvas {
+  display: none;
+  border: 1px solid white;
+}
+
+#intro-text-about {
+  margin-top: 20vh;
+}
+
 /* /////// PC //////// */
 @media (min-width: 1025px) {
 
   /* ///// STYLING FOR INDEX ////// */
-  #index {
-    height: 100vh;
-  }
+  .landingpage {}
 
   .tabbar {
-    width: 50%;
+    width: 40%;
     float: right;
+    margin-right: 3vh;
+    margin-left: 3vh;
   }
 
   .model {
     width: 50vmin;
     height: 100vmin;
+    margin-top: 5vh;
   }
 
   .test__output {
-    margin-top: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .test {
-    position: absolute;
-  }
+  .test {}
 
   .menu-overlab {
     position: relative;
@@ -526,20 +533,21 @@ header h2 {
   .intro-overlab {
     width: 43%;
     float: right;
-    margin-top: 10vh;
+    margin-top: -5vh;
     font-size: 13px;
   }
 
   .forsvind {
     width: 50%;
-    height: 130vh;
-    font-size: 6.5rem;
-    margin-top: -40vh;
+    height: 135%;
+    font-size: 650%;
+    margin-top: -35vh;
     top: 0;
   }
 
   .footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
     bottom: 0;
@@ -555,16 +563,11 @@ header h2 {
   /*
   ////////////  STYLING FOR PROJECT //////////////
   */
-  #projects .test__output {
-    width: 100vw;
-    height: 100vh;
-  }
-
   .forsvind-projects {
     width: 50%;
-    height: 100vh;
-    font-size: 6.5rem;
-    margin-top: -10vh;
+    height: 150vh;
+    font-size: 650%;
+    margin-top: -20vh;
     top: 0;
   }
 
@@ -574,7 +577,7 @@ header h2 {
   }
 
   #projects .intro-overlab {
-    margin-top: 95vh;
+    margin-top: 9vh;
     margin-left: 40vh;
   }
 
@@ -659,8 +662,7 @@ header h2 {
   }
 
   .x-close {
-    position: absolute;
-    margin-top: -2vh;
+    margin-top: -3vh;
     margin-right: -1vh;
   }
 
@@ -678,5 +680,78 @@ header h2 {
     -moz-animation: example1 20s linear infinite;
     -webkit-animation: example1 20s linear infinite;
     animation: example1 20s linear infinite;
+  }
+}
+
+@media (min-width: 1525px) {
+  body {
+    margin-top: 5vh;
+  }
+
+  .tabbar {
+    width: 39%;
+  }
+
+  .tabbar a {
+    font-size: 200%;
+  }
+
+  .forsvind {
+    margin-top: -20%;
+    font-size: 1000%;
+    height: 140vh;
+  }
+
+  .forsvind-projects {
+    margin-top: 0%;
+    font-size: 1000%;
+    height: 100vh;
+  }
+
+  .intro-text {
+    margin-top: -10vh;
+    font-size: 150%;
+  }
+
+  .model {
+    width: 45vmin;
+    height: 85vmin;
+    margin-top: 10vh;
+  }
+
+  .model-hand {
+    width: 50vmin;
+    height: 90vmin;
+    margin-top: 10vh;
+  }
+
+  .footer {
+    margin-top: 15%;
+  }
+
+  .footer a {
+    font-size: 150%;
+  }
+
+  a {
+    font-size: 115%;
+  }
+
+  /* MY OWN STUFF */
+  .elements img {
+    width: 150%;
+  }
+
+  .elements video {
+    width: 150%
+  }
+
+  .elements {
+    margin-left: 7vh;
+    margin-right: 7vh;
+  }
+
+  .x-close {
+    margin-right: -10vh;
   }
 }
