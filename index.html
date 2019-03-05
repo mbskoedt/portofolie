@@ -111,7 +111,9 @@
         <div class="project-text">
           <h3>Under Masken</h3>
           <p>A project for the café/bar Under Masken. <br> Click if you like aquariums</p>
-          <button class="button">I love aquariums</button>
+          <a href="#under-masken" onclick="showPage('underMasken')">
+            <button class="button">I love aquariums</button>
+          </a>
         </div>
       </section>
       <section class="project-container" id="container-4">
@@ -172,11 +174,31 @@
     </div>
   </section>
 
-  <section id="x" class="page">
+  <section id="underMasken" class="page">
     <header class="topbar">
-      <h2>about</h2>
+      <h2>under masken</h2>
     </header>
-    <p>Hmm, there should be some clients right here...</p>
+    <section class="video-show">
+      <img src="img/monitor-old-pc.png" alt="Old Computer" class="old-pc">
+      <video class="under-masken-video" autoplay loop>
+        <source src="video/under-masken.mp4">
+      </video>
+    </section>
+    <section class="text-under-masken">
+      <h3>Project:<br> Under Masken</h3>
+      <p>This is a project I took part in for the bar Under Masken.<br><br>
+        The bar is a beloved and well-known place in Aarhus, owned by the artist and globe-trotter Hans Krull. Hans' art and artefacts (mainly masks) from around the world, are to be found everywhere in the bar, making it a super unique and cool
+        space. Furthermore the back of the room is decorated with 3 huge aquariums.<br>
+        <br> It was essential for us as web designers to integrate all these elements in the new website, as well as capturing the dark and cozy space you find in a basement bar. </p>
+    </section>
+    <section class="under-masken-icons">
+      <div class="test" id="under-masken-test">
+        <div class="test__output">
+          <x-model class="model-under-masken" src="assets/models/gltf/3d-under-masken/under-masken-logo.obj" style="max-width: 500px; max-height: 500px; animation: 6s spin-y linear infinite"></x-model>
+        </div>
+      </div>
+
+    </section>
   </section>
 
   <section id="x" class="page">
@@ -227,14 +249,13 @@
     </section>
   </section>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="javascript/javascript.js"></script>
   <script src="assets/js/vendor/custom-element-polyfill.min.js"></script>
   <script src="assets/js/vendor/three.min.js"></script>
   <script src="assets/js/vendor/three-obj-loader.min.js"></script>
   <script src="assets/js/vendor/three-gltf-loader.min.js"></script>
   <script src="dist/model-element.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>

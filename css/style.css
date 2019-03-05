@@ -58,7 +58,6 @@ header h2 {
   display: flex;
   justify-content: space-between;
   z-index: 100;
-  background-color: black;
 }
 
 /* Style the links inside the navigation bar */
@@ -484,6 +483,45 @@ header h2 {
   }
 }
 
+/* ////// UNDER MASKEN ////// */
+
+.old-pc {
+  display: none;
+}
+
+.under-masken-video {
+  width: 100vw;
+}
+
+.text-under-masken h3 {
+  font-size: 200%;
+  text-align: center;
+}
+
+.text-under-masken p {
+  color: white;
+  margin: 5vh;
+  text-align: justify;
+}
+
+.logo-under-masken {
+  width: 100%;
+  margin: 10%;
+}
+
+.under-masken-icons {
+  height: 80vh;
+}
+
+#under-masken-test {
+  margin-top: -5vh;
+}
+
+/* icon karussel */
+
+
+
+
 /* ////// ABOUT ///// */
 .canvas {
   display: none;
@@ -493,6 +531,7 @@ header h2 {
 #intro-text-about {
   margin-top: 20vh;
 }
+
 
 /* /////// PC //////// */
 @media (min-width: 1025px) {
@@ -680,6 +719,11 @@ header h2 {
     -moz-animation: example1 20s linear infinite;
     -webkit-animation: example1 20s linear infinite;
     animation: example1 20s linear infinite;
+  }
+
+  /* //// UNDER MASKEN //// */
+  .old-pc {
+    width: 50%;
   }
 }
 

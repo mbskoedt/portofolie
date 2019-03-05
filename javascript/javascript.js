@@ -190,3 +190,5 @@ document.addEventListener('keydown', function(e) {
 
 // start the game
 requestAnimationFrame(loop);
+
+///////// ICON KARRUSEL //////
