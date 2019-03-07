@@ -377,13 +377,18 @@ header h2 {
   margin-top: 5vh;
 }
 
+.explained-text {
+  display: none;
+}
+
 .gallery-container {
   width: 100vw;
   height: 80vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
-  margin-top: -15vh;
+  margin-top: -8vh;
 }
 
 .responsive-element {
@@ -430,7 +435,7 @@ header h2 {
 
 .example1 p {
   font-size: 1.2em;
-  color: white;
+  color: white !important;
   width: 200%;
   height: 100%;
   margin: 0;
@@ -483,55 +488,33 @@ header h2 {
   }
 }
 
-/* ////// UNDER MASKEN ////// */
-
-.old-pc {
-  display: none;
-}
-
-.under-masken-video {
-  width: 100vw;
-}
-
-.text-under-masken h3 {
-  font-size: 200%;
-  text-align: center;
-}
-
-.text-under-masken p {
-  color: white;
-  margin: 5vh;
-  text-align: justify;
-}
-
-.logo-under-masken {
-  width: 100%;
-  margin: 10%;
-}
-
-.under-masken-icons {
-  height: 80vh;
-}
-
-#under-masken-test {
-  margin-top: -5vh;
-}
-
-/* icon karussel */
-
-
-
-
 /* ////// ABOUT ///// */
 .canvas {
   display: none;
-  border: 1px solid white;
 }
 
 #intro-text-about {
   margin-top: 20vh;
 }
 
+.computer-only-text {
+  display: none;
+}
+
+.download-section {
+  display: flex;
+  margin-left: 6vh;
+}
+
+.pdf-icon {
+  width: 30px;
+  height: auto;
+  margin-left: 10px;
+}
+
+#about-footer {
+  margin-top: 5vh;
+}
 
 /* /////// PC //////// */
 @media (min-width: 1025px) {
@@ -578,7 +561,7 @@ header h2 {
 
   .forsvind {
     width: 50%;
-    height: 135%;
+    height: 150vh;
     font-size: 650%;
     margin-top: -35vh;
     top: 0;
@@ -592,6 +575,7 @@ header h2 {
     bottom: 0;
     left: 0;
     width: 100%;
+    margin-top: 25vh;
   }
 
   .footer h3, p, a {
@@ -679,25 +663,22 @@ header h2 {
     color: white;
   }
 
+.explained-text {
+  display: block;
+  position: absolute;
+  margin: 10vh;
+}
+
   .gallery-container {
     align-content: center;
   }
 
-  .responsive-element {
-    width: 200px;
-    height: auto;
-  }
-
-  .responsive-element-video {
-    width: 200px;
-    height: auto;
-  }
-
   .elements {
     position: relative;
-    width: 200px;
+    flex-basis: auto;
+    max-width: 500px;
     height: auto;
-    margin: 3vh;
+    margin: 20px;
   }
 
   .x-close {
@@ -721,10 +702,27 @@ header h2 {
     animation: example1 20s linear infinite;
   }
 
-  /* //// UNDER MASKEN //// */
-  .old-pc {
-    width: 50%;
-  }
+/* ///// ABOUT PAGE ///// */
+
+.snake-game {
+  width: 100vw;
+  height: 400px;
+  position: absolute;
+  margin-top: 20vh;
+  background-color: none;
+}
+
+.canvas {
+  display: block;
+  border: 1px solid white;
+  left:0;
+  bottom: 0;
+}
+
+#landingpage-about {
+  margin-bottom: 70vh;
+}
+
 }
 
 @media (min-width: 1525px) {
@@ -782,20 +780,8 @@ header h2 {
   }
 
   /* MY OWN STUFF */
-  .elements img {
-    width: 150%;
-  }
-
-  .elements video {
-    width: 150%
-  }
 
   .elements {
-    margin-left: 7vh;
-    margin-right: 7vh;
-  }
-
-  .x-close {
-    margin-right: -10vh;
+    max-width: 650px;  
   }
 }

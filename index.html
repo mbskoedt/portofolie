@@ -104,14 +104,16 @@
         <div class="project-text">
           <h3>myFSTVL</h3>
           <p>A prototype showcase of the web app myFSTVL. <br> It's Tinder for music</p>
-          <button class="button">What? Let me see</button>
+          <a href="https://www.thesitewizard.com/" target="_blank">
+            <button class="button">What? Let me see</button>
+          </a>
         </div>
       </section>
       <section class="project-container" id="container-3">
         <div class="project-text">
           <h3>Under Masken</h3>
           <p>A project for the café/bar Under Masken. <br> Click if you like aquariums</p>
-          <a href="#under-masken" onclick="showPage('underMasken')">
+          <a href="https://www.thesitewizard.com/" target="_blank">
             <button class="button">I love aquariums</button>
           </a>
         </div>
@@ -120,7 +122,9 @@
         <div class="project-text">
           <h3>Clean Sneaks</h3>
           <p>A retake on Clean Sneaks Aarhus website <br> Hypnotizing .gif included</p>
-          <button class="button">Take me there</button>
+          <a href="https://www.thesitewizard.com/" target="_blank">
+            <button class="button">Take me there</button>
+          </a>
         </div>
       </section>
       <a href="#projects">
@@ -139,6 +143,9 @@
     <header class="topbar">
       <h2>my own projects</h2>
     </header>
+    <div class="explained-text">
+      <p>Get a closer look by closing the images</p>
+    </div>
     <section class="gallery-container">
       <div id="element-1" class="elements">
         <span onclick="document.getElementById('element-1').style.display='none';" class="x-close">&times;</span>
@@ -174,33 +181,6 @@
     </div>
   </section>
 
-  <section id="underMasken" class="page">
-    <header class="topbar">
-      <h2>under masken</h2>
-    </header>
-    <section class="video-show">
-      <img src="img/monitor-old-pc.png" alt="Old Computer" class="old-pc">
-      <video class="under-masken-video" autoplay loop>
-        <source src="video/under-masken.mp4">
-      </video>
-    </section>
-    <section class="text-under-masken">
-      <h3>Project:<br> Under Masken</h3>
-      <p>This is a project I took part in for the bar Under Masken.<br><br>
-        The bar is a beloved and well-known place in Aarhus, owned by the artist and globe-trotter Hans Krull. Hans' art and artefacts (mainly masks) from around the world, are to be found everywhere in the bar, making it a super unique and cool
-        space. Furthermore the back of the room is decorated with 3 huge aquariums.<br>
-        <br> It was essential for us as web designers to integrate all these elements in the new website, as well as capturing the dark and cozy space you find in a basement bar. </p>
-    </section>
-    <section class="under-masken-icons">
-      <div class="test" id="under-masken-test">
-        <div class="test__output">
-          <x-model class="model-under-masken" src="assets/models/gltf/3d-under-masken/under-masken-logo.obj" style="max-width: 500px; max-height: 500px; animation: 6s spin-y linear infinite"></x-model>
-        </div>
-      </div>
-
-    </section>
-  </section>
-
   <section id="x" class="page">
     <header class="topbar">
       <h2>about</h2>
@@ -214,7 +194,7 @@
     <header class="topbar">
       <h2>about</h2>
     </header>
-    <section class="landingpage">
+    <section class="landingpage" id="landingpage-about">
       <h2 class="forsvind">
         <br>OUTMEAB<br>
         BOUTMEA<br>
@@ -230,22 +210,31 @@
       </div>
       <div class="intro-overlab" id="intro-text-about">
         <p class="intro-text">
-          Welcome to my portfolio.
-          <br>If you're still in doubt about my name it's Matias Skødt.
+          <i class="computer-only-text">(If you don’t want to read all this, you can just go and play snake at the bottom of this page.)</i>
           <br><br>
-          I am a Multimedia Designer and I do all kinds of multimedia stuff. Under <a href="#projects" onclick="showPage('projects')">projects</a> you can find a collection of the stuff I do.
-          <br><br> If you are intersted in knowing more about me as a humanbeing/colleage/coding machine/Adobe-lover/DJ, check out my <a href="#about" onclick="showPage('about')">about</a> page.<br>
-          ... Or just have fun watching 3D-stuff turn around.
+          I love the internet! I love browsing through weird music and unknown artists. I love watching <a href="https://www.youtube.com/user/AntsCanada" target="_blank"> YouTube-videos about ants</a>. I love browsing dank memes on Reddit. And I
+          love being part of it all.
+          <br>
+          I am proud of being a contributor to World Wide Web and creating amazing stuff for the whole world to enjoy <i>(unless you use Internet Explorer)</i>. <br><br>
+          I make some things in Photoshop. I make some things in After Effects. I make some things with my hands and a pencil. I play things on my turntable and <a href="https://soundcloud.com/user-539065488" target="_blank">upload them</a> for the
+          world to enjoy. I get creative with HTML, CSS and JavaScript and
+          make websites like this portfolio. And it’s all done with great pleasure. <br><br>
+          I love creating and I love learning. And I also love to cook, and I did it for 3 years and my former boss said a few nice words about me, which is all written down on this PDF-file for everyone to download and read:
         </p>
+        <div class="download-section">
+          <p>The real me</p>
+          <a href="img/regular-party.jpg" download>
+            <img src="img/pdf-icon.png" class="pdf-icon" alt="PDF download icon">
+          </a>
+        </div>
       </div>
-      <canvas class="canvas" width="400" height="400" id="game"></canvas>
-      <section class="footer">
-        <a href="">copyright matias skødt 2019</a>
-        <p>*</p>
-        <a href="mailto:matiasskodt@gmail.com" target="_top">matiasskodt@gmail.com</a>
-        <p>*</p>
-        <a href="https://www.instagram.com/style.display.skodt/">instagram: @style.display.skodt</a>
-      </section>
+    </section>
+    <section class="footer" id="about-footer">
+      <a href="">copyright matias skødt 2019</a>
+      <p>*</p>
+      <a href="mailto:matiasskodt@gmail.com" target="_top">matiasskodt@gmail.com</a>
+      <p>*</p>
+      <a href="https://www.instagram.com/style.display.skodt/">instagram: @style.display.skodt</a>
     </section>
   </section>
 
