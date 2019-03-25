@@ -303,6 +303,14 @@ header h2 {
   background-position: center;
 }
 
+#container-0 {
+  background-image: url("../img/cow-cube.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 50vw auto;
+  background-position: center;
+}
+
 #container-2 {
   background-image: url("../img/myFSTVL-login.jpg");
   background-repeat: no-repeat;
@@ -350,6 +358,9 @@ header h2 {
   font-size: 16px;
   margin-top: 7vh;
   font-family: 'Roboto Mono', monospace;
+  border-style: solid;
+  border-color: white;
+  cursor: pointer;
 }
 
 .project-container {
@@ -366,6 +377,16 @@ header h2 {
   position: absolute;
   margin-top: 20vw;
   color: white;
+}
+
+.flex-knap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-2 {
+  border-style: none;
 }
 
 /* /////// MY OWN STUFF ////// */
@@ -425,6 +446,10 @@ header h2 {
   margin-top: -5vh;
 }
 
+.explained-text-mobile {
+  z-index: 1000;
+}
+
 .example1 {
   height: 10vh;
   width: 100%;
@@ -436,7 +461,7 @@ header h2 {
 .example1 p {
   font-size: 1.2em;
   color: white !important;
-  width: 200%;
+  width: 400%;
   height: 100%;
   margin: 0;
   /* Starting position */
@@ -444,9 +469,9 @@ header h2 {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   /* Apply animation to this element */
-  -moz-animation: example1 10s linear infinite;
-  -webkit-animation: example1 10s linear infinite;
-  animation: example1 10s linear infinite;
+  -moz-animation: example1 15s linear infinite;
+  -webkit-animation: example1 15s linear infinite;
+  animation: example1 15s linear infinite;
 }
 
 /* Move it (define the animation) */
@@ -507,7 +532,7 @@ header h2 {
 }
 
 .pdf-icon {
-  width: 30px;
+  width: 60px;
   height: auto;
   margin-left: 10px;
 }
@@ -516,8 +541,11 @@ header h2 {
   margin-top: 5vh;
 }
 
+/* /////// IPAD //////// */
+@media (min-width: 600px) {}
+
 /* /////// PC //////// */
-@media (min-width: 1025px) {
+@media (min-width: 900px) {
 
   /* ///// STYLING FOR INDEX ////// */
   .landingpage {}
@@ -640,13 +668,6 @@ header h2 {
     padding-bottom: 10vh;
   }
 
-  .button {
-    border-style: solid;
-    border-color: white;
-  }
-
-  .project-container {}
-
   .project-text {
     margin-left: 10vh;
     margin-right: 10vh;
@@ -663,11 +684,11 @@ header h2 {
     color: white;
   }
 
-.explained-text {
-  display: block;
-  position: absolute;
-  margin: 10vh;
-}
+  .explained-text {
+    display: block;
+    position: absolute;
+    margin: 10vh;
+  }
 
   .gallery-container {
     align-content: center;
@@ -702,27 +723,33 @@ header h2 {
     animation: example1 20s linear infinite;
   }
 
-/* ///// ABOUT PAGE ///// */
+  .explain-text-projects {
+    display: none;
+  }
 
-.snake-game {
-  width: 100vw;
-  height: 400px;
-  position: absolute;
-  margin-top: 20vh;
-  background-color: none;
-}
+  /* ///// ABOUT PAGE ///// */
+  .snake-game {
+    width: 100vw;
+    height: 400px;
+    position: absolute;
+    margin-top: 20vh;
+    background-color: none;
+  }
 
-.canvas {
-  display: block;
-  border: 1px solid white;
-  left:0;
-  bottom: 0;
-}
+  .canvas {
+    display: block;
+    border: 1px solid white;
+    left: 0;
+    bottom: 0;
+  }
 
-#landingpage-about {
-  margin-bottom: 70vh;
-}
+  #landingpage-about {
+    margin-bottom: 70vh;
+  }
 
+  .pdf-icon {
+    width: 32px;
+  }
 }
 
 @media (min-width: 1525px) {
@@ -780,8 +807,13 @@ header h2 {
   }
 
   /* MY OWN STUFF */
-
   .elements {
-    max-width: 650px;  
+    max-width: 650px;
+  }
+
+  /* ABOUT */
+  .pdf-icon {
+    width: 50px;
+    height: auto;
   }
 }
